@@ -34,24 +34,25 @@ async function scrapeProduct(url) {
 	const txt7 = await el7.getProperty('textContent');
 	const head7 = await txt7.jsonValue();
 
-	console.log({head1, head2, head3, head4, head5, head6, head7});
-
-	var output = JSON.stringify({head1, head2, head3, head4, head5, head6, head7});
+	var output = JSON.stringify({head1, head2, head3, head4, head5, head6, head7}); //may do this only on those appended to txt
 
 	browser.close();
 
-	if(output_prev !== output) { //Doesn't quite work
+	if(output_prev !== output) { 
 		const fsLibrary  = require('fs');
 
 		var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
 		stream.write(output + "\n");
 		stream.end();
+
+		console.log({head1, head2, head3, head4, head5, head6, head7});
+
+		output_prev = output; 
 	}
 	else {
 		console.log("No new headlines\n");
 	}
 
-	output_prev = output; //Doesn't quite work
 
 }
 
