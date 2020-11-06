@@ -1,5 +1,6 @@
 const puppeteer = require('puppeteer');
-var output_prev;
+const fsLibrary  = require('fs');
+var output_prev = "";
 
 async function scrapeProduct(url) {
 	const browser = await puppeteer.launch();
@@ -38,22 +39,76 @@ async function scrapeProduct(url) {
 
 	browser.close();
 
-	if(output_prev !== output) { 
-		const fsLibrary  = require('fs');
+		if(output_prev.indexOf(head1) == -1) { 
 
-		var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
-		stream.write(output + "\n");
-		stream.end();
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head1 + "\n");
+			stream.end();
 
-		console.log({head1, head2, head3, head4, head5, head6, head7});
+			console.log({head1});
+		}
+		if(output_prev.indexOf(head2) == -1) { 
 
-		output_prev = output; 
-	}
-	else {
-		console.log("No new headlines\n");
-	}
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head2 + "\n");
+			stream.end();
 
+			console.log({head2});
+		}
+		if(output_prev.indexOf(head3) == -1) { 
 
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head3 + "\n");
+			stream.end();
+
+			console.log({head3});
+		}
+		if(output_prev.indexOf(head4) == -1) { 
+
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head4 + "\n");
+			stream.end();
+
+			console.log({head4});
+		}
+		if(output_prev.indexOf(head5) == -1) { 
+
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head5 + "\n");
+			stream.end();
+
+			console.log({head5});
+		}
+		if(output_prev.indexOf(head6) == -1) { 
+
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head6 + "\n");
+			stream.end();
+
+			console.log({head6});
+		}
+		if(output_prev.indexOf(head7) == -1) { 
+
+			var stream = fsLibrary.createWriteStream("espn_nfl_top_headlines.txt", {flags:'a'});
+			stream.write(head7 + "\n");
+			stream.end();
+
+			console.log({head7});
+		}
+		/*else {
+			console.log("No new headlines\n");
+		}*/
+	output_prev = output;
+
+	var currentdate = new Date(); 
+	var datetime = "Last Run: " + currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
+	console.log(datetime);
 }
 
 scrapeProduct('https://www.espn.com/nfl/')
