@@ -1,0 +1,14 @@
+{
+  "name": "espn_twitter",
+  "version": "1.0.0",
+  "description": "Logs every ESPN tweet to a file",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jesse Turner",
+  "license": "ISC",
+  "dependencies": {
+    "twit": "^2.2.11"
+  }
+}
