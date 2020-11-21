@@ -7,6 +7,12 @@ var keyword = 'ufc';
 
 var stream = T.stream('statuses/filter', { track: keyword });
 
+/*
+stream.on('tweet', function (tweet) {
+		console.log(tweet.user.location);
+});
+*/
+
 stream.on('tweet', function (tweet) {
 	if (typeof tweet.extended_tweet !== 'undefined') {
 		console.log(tweet.extended_tweet.full_text); 
@@ -14,4 +20,5 @@ stream.on('tweet', function (tweet) {
 	else {
 		console.log(tweet.text);
 	}
+	console.log("From: ", tweet.user.location);
 });
