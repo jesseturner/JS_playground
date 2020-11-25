@@ -1,7 +1,6 @@
 var Twit = require('twit');
 var config = require('./config');
 const fs  = require('fs');
-var csvWriter = require('csv-write-stream')
 
 var T = new Twit(config);
 
@@ -9,41 +8,26 @@ var keyword = 'ufc';
 
 var stream = T.stream('statuses/filter', { track: keyword });
 
-/*
-stream.on('tweet', function (tweet) {
-		console.log(tweet);
-});
-*/
 
-
+var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
+csv.write("tweet; location + \n");
+csv.end();
 
 stream.on('tweet', function (tweet) {
 	
 	if (typeof tweet.extended_tweet !== 'undefined') {
-		console.log(tweet.extended_tweet.full_text); 
-		
-		var writer = csvWriter({ headers: ["tweet", "location"]});
-		//var stream = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
-		writer.pipe(fs.createWriteStream('out.csv', {flags: 'a'}));
-		writer.write({tweet: tweet.extended_tweet.full_text});
-		writer.end();
+		console.log(tweet.extended_tweet.full_text + ";" + tweet.user.location); 
+
+		var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
+		csv.write(tweet.extended_tweet.full_text + ";" + tweet.user.location + "\n");
+		csv.end();
 	}
 
 	else {
-		console.log(tweet.text);
+		console.log(tweet.text + ";" + tweet.user.location);
 		
-		var writer = csvWriter({ headers: ["tweet", "location"]});
-		//var stream = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
-		writer.pipe(fs.createWriteStream('out.csv', {flags: 'a'}));
-		writer.write({tweet: tweet.text});
-		writer.end();
+		var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
+		csv.write(tweet.text + ";" + tweet.user.location + "\n");
+		csv.end();
 	}
-	console.log("From: ", tweet.user.location);
-
-	var writer = csvWriter({ headers: ["tweet", "location"]});
-	//var stream = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
-	writer.pipe(fs.createWriteStream('out.csv', {flags: 'a'}));
-	writer.write({location: tweet.user.location});
-	writer.end();
-
 });
