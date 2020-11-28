@@ -6,28 +6,32 @@ var T = new Twit(config);
 
 var keyword = 'ufc';
 
-var stream = T.stream('statuses/filter', { track: keyword });
+var stream = T.stream('statuses/filter', { track: keyword, language: 'en' });
 
 
 var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
 csv.write("tweet; location + \n");
 csv.end();
 
-stream.on('tweet', function (tweet) {
-	
-	if (typeof tweet.extended_tweet !== 'undefined') {
-		console.log(tweet.extended_tweet.full_text + ";" + tweet.user.location); 
 
-		var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
-		csv.write(tweet.extended_tweet.full_text + ";" + tweet.user.location + "\n");
-		csv.end();
+stream.on('tweet', function (tweet) {
+
+	var message; 
+
+	if (typeof tweet.extended_tweet !== 'undefined') {
+		message = tweet.extended_tweet.full_text;
+	}
+	else {
+		message = tweet.text;
 	}
 
-	else {
-		console.log(tweet.text + ";" + tweet.user.location);
-		
+	var isRT = message.substr(0,2);
+	
+	if (isRT !== "RT") {
+		console.log(message + ";" + tweet.user.location); 
+
 		var csv = fs.createWriteStream("ufc_tweets.csv", {flags:'a'});
-		csv.write(tweet.text + ";" + tweet.user.location + "\n");
+		csv.write(message + ";" + tweet.user.location + "\n");
 		csv.end();
 	}
 });
