@@ -16,3 +16,6 @@ console.log('Training completed.');
 
 //Save
 classifier.save('nvclassifier.json', function(err,classifier){});
+
+var raw = JSON.stringify(classifier);
+console.log(raw);
