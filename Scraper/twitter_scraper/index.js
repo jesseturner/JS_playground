@@ -8,9 +8,21 @@ app.use(express.json({ limit: '1mb' }));
 
 const database = new Datastore('database.db');
 database.loadDatabase();
-database.insert( { name: 'test datapoint', value: '10000' } );
 
 
+//Save incoming data
+app.post('/api', (request, response) => {
+	const data = request.body;
+	const timestamp = Date.now();
+	data.timestamp = timestamp;
+	database.insert(data);
+	response.json(data);
+	console.log('Saved data to db.');
+});
+
+//Run classifier
+
+//Send data to client side
 app.get('/api', (request, response) => {
 	database.find({}, (err, data) => {
 		if (err) {
@@ -19,13 +31,7 @@ app.get('/api', (request, response) => {
 		}
 		response.json(data);
 	});
+	console.log('Sent data to client side.');
 });
 
-app.post('/api', (request, response) => {
-	const data = request.body;
-	const timestamp = Date.now();
-	data.timestamp = timestamp;
-	database.insert(data);
-	response.json(data);
-});
 

@@ -3,14 +3,23 @@
 <body>
 
 <h1>Database Query</h1>
-<script> 
+
+<label for="mood">enter your mood</label>
+<input id="mood" value="default" />
+<button id="submit">submit</button>
+<script src="post.js"></script>
+
+
+
+<script>	
 	getData();
 	async function getData() {
-		const response = await fetch('/api');
-		const data = await response.json();
+		const get_response = await fetch('/api');
+		const data = await get_response.json();
 		console.log(data);
 	}
 </script>
+
 
 </body>
 </html>
