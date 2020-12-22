@@ -7,6 +7,7 @@
 {"name":"test datapoint","value":"10000","_id":"IoImiC62XWg1Cfgr"}
 {"name":"test datapoint","value":"10000","_id":"LoUlIuxLQ51KEy6c"}
 {"name":"Is it working?","value":"12","timestamp":1608302798552,"_id":"NeytKuZel0CLsC70"}
+{"message":"send","timestamp":1608671032405,"_id":"OTZ7LMsgAL4Atdok"}
 {"name":"Is it working?","value":"12","timestamp":1608218079727,"_id":"Skg9tdpaZvhDOEOW"}
 {"name":"Is it working?","value":"12","timestamp":1608302908513,"_id":"UrygWYgu3fV85PJ8"}
 {"name":"Is it working?","value":"12","timestamp":1608302835112,"_id":"k5zEbpyWPB7jsE8t"}
@@ -14,3 +15,6 @@
 {"name":"test datapoint","value":"10000","_id":"n138wP0ZmUwPbdBi"}
 {"name":"Is it working?","value":"12","timestamp":1608302824605,"_id":"ullbANscF77gLX63"}
 {"name":"Is it working?","value":"12","timestamp":1608302910143,"_id":"vKEbeLB880uFJmjt"}
+{"message":"trying again","timestamp":1608675086143,"_id":"id8MCGSPOe7PH0mK"}
+{"message":"trying again","timestamp":1608675091274,"_id":"yrccA8WIoIXXg521"}
+{"message":"trying again","timestamp":1608675092035,"_id":"XWZA4dKED8zJpzsb"}

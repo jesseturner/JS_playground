@@ -1,8 +1,10 @@
-function sendData() {
-	const button = document.getElementById('submit');
-	button.addEventListener('click', async event => {
-	    const mood = document.getElementById('mood').value;
-	    const data = { mood };
+var button = document.getElementById("button");
+var message = document.getElementById("message");
+
+button.onclick = function sendData() {
+
+	var message = document.send.message.value;
+	    const data = { message };
 	    const options = {
 	      method: 'POST',
 	      headers: {
@@ -10,8 +12,7 @@ function sendData() {
 	      },
 	      body: JSON.stringify(data)
 	    };
-	    const response = await fetch('/api', options);
-	    const json = await response.json();
+	    const response = fetch('/api', options);
+	    const json = response.json();
 	    console.log(json);
-	  });
-}
+	};
