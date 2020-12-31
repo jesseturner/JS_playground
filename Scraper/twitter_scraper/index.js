@@ -17,7 +17,7 @@ app.post('/api', (request, response) => {
 	data.timestamp = timestamp;
 	database.insert(data);
 	response.json(data);
-	console.log('Saved data to db.');
+	console.log('Post');
 });
 
 //Run classifier
@@ -31,7 +31,7 @@ app.get('/api', (request, response) => {
 		}
 		response.json(data);
 	});
-	console.log('Sent data to client side.');
+	console.log('Get');
 });
 
 

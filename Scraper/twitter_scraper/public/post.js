@@ -1,4 +1,4 @@
-var button = document.getElementById("button");
+var button = document.getElementById("send_button");
 var message = document.getElementById("message");
 
 button.onclick = function sendData() {
@@ -13,6 +13,6 @@ button.onclick = function sendData() {
 	      body: JSON.stringify(data)
 	    };
 	    const response = fetch('/api', options);
-	    const json = response.json();
+	    const json = response.json(); //needs some sort of await, throwing error
 	    console.log(json);
 	};
