@@ -34,4 +34,10 @@ app.get('/api', (request, response) => {
 	console.log('Get');
 });
 
-
+//Delete data
+app.get('/delete', (request, response) => {
+	database.remove({}, { multi: true }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'entries');
+	});
+		response.send('Deleted');
+	});

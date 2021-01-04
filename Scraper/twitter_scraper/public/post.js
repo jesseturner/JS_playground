@@ -1,18 +1,18 @@
 var button = document.getElementById("send_button");
-var message = document.getElementById("message");
+var name = document.getElementById("name");
+var address = document.getElementById("address");
 
-button.onclick = function sendData() {
+button.onclick = async function sendData() {
 
-	var message = document.send.message.value;
-	    const data = { message };
+	var name = document.send.name.value;
+	var address = document.send.address.value;
+	    const data = { name, address };
 	    const options = {
 	      method: 'POST',
-	      headers: {
-	        'Content-Type': 'application/json'
-	      },
+	      headers: {'Content-Type': 'application/json'},
 	      body: JSON.stringify(data)
 	    };
-	    const response = fetch('/api', options);
-	    const json = response.json(); //needs some sort of await, throwing error
+	    const response = await fetch('/api', options);
+	    const json = await response; //not actually the response I set in index.js
 	    console.log(json);
 	};

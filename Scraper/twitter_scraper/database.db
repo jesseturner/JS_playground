@@ -1,29 +1,3 @@
-{"name":"Is it working?","value":"12","timestamp":1608218086723,"_id":"05hORLIIJkoXbmjG"}
-{"name":"Is it working?","value":"12","timestamp":1608302831865,"_id":"1AzR6Lj5iaX8NvUU"}
-{"name":"test datapoint","value":"10000","_id":"3HQEjVvdY6Rjhfvy"}
-{"message":"hello","timestamp":1608685121888,"_id":"7MxMIlQAUZ8Ddn8u"}
-{"name":"test datapoint","value":"10000","_id":"B8Jr7YZjIMxn7TaA"}
-{"name":"test datapoint","value":"10000","_id":"Bfe8svzMEi518Pwh"}
-{"name":"Is it working?","value":"12","timestamp":1608218086864,"_id":"IkD8OkpTnrqZbWWI"}
-{"name":"test datapoint","value":"10000","_id":"IoImiC62XWg1Cfgr"}
-{"name":"test datapoint","value":"10000","_id":"LoUlIuxLQ51KEy6c"}
-{"name":"Is it working?","value":"12","timestamp":1608302798552,"_id":"NeytKuZel0CLsC70"}
-{"message":"add to db","timestamp":1609369981591,"_id":"NtU3KDjh5QO6ATeV"}
-{"message":"send","timestamp":1608671032405,"_id":"OTZ7LMsgAL4Atdok"}
-{"name":"Is it working?","value":"12","timestamp":1608218079727,"_id":"Skg9tdpaZvhDOEOW"}
-{"message":"check","timestamp":1608685241691,"_id":"TyqHHdzs8DCsZQMa"}
-{"name":"Is it working?","value":"12","timestamp":1608302908513,"_id":"UrygWYgu3fV85PJ8"}
-{"message":"trying again","timestamp":1608675092035,"_id":"XWZA4dKED8zJpzsb"}
-{"message":"","timestamp":1609372927101,"_id":"aayP4ZRwIyFN0daE"}
-{"lat":40.5798912,"lon":-105.09680639999999,"timestamp":1609370603533,"_id":"fSz48CKebgOqkvRS"}
-{"message":"trying again","timestamp":1608675086143,"_id":"id8MCGSPOe7PH0mK"}
-{"message":"massive attempt 2","timestamp":1609372317896,"_id":"jiGiM4KGSRBvQqxl"}
-{"name":"Is it working?","value":"12","timestamp":1608302835112,"_id":"k5zEbpyWPB7jsE8t"}
-{"name":"Is it working?","value":"12","timestamp":1608302824475,"_id":"l1QMAkFZhzdYmRcI"}
-{"message":"Sending via massive","timestamp":1609372941024,"_id":"lSZ8wF1MDSZ5isdX"}
-{"name":"test datapoint","value":"10000","_id":"n138wP0ZmUwPbdBi"}
-{"message":"igloo","timestamp":1609368926750,"_id":"r8HBYtACoSu8mHAD"}
-{"message":"Massive","timestamp":1609372077980,"_id":"uIi5eIz8BRCPlvtl"}
-{"name":"Is it working?","value":"12","timestamp":1608302824605,"_id":"ullbANscF77gLX63"}
-{"name":"Is it working?","value":"12","timestamp":1608302910143,"_id":"vKEbeLB880uFJmjt"}
-{"message":"trying again","timestamp":1608675091274,"_id":"yrccA8WIoIXXg521"}
+{"name":"Bill Bogey","address":"6708 Fiddlesticks Lane","timestamp":1609703321598,"_id":"gPK9HMxko2PF8IFK"}
+{"name":"Bill O'Brian","address":"1515 Old Cottage Rd","timestamp":1609791002691,"_id":"kLcO2vZXPeyNb2Ab"}
+{"name":"Jerry Jones","address":"14 Franklin Ln","timestamp":1609788790515,"_id":"tHwT8vw8YNZiHgFp"}
