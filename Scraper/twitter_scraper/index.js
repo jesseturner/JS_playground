@@ -34,10 +34,19 @@ app.get('/api', (request, response) => {
 	console.log('Get');
 });
 
-//Delete data
+//Delete all data
 app.get('/delete', (request, response) => {
 	database.remove({}, { multi: true }, function(err, numDeleted) {
      console.log('Deleted', numDeleted, 'entries');
+	});
+		response.send('Deleted');
+	});
+
+//Delete specific entry
+app.get('/deletespec', (request, response) => {
+	const data = request.body;
+	users.remove({ name: { data } }, function(err, numDeleted) {
+     console.log('Deleted', data, 'entries');
 	});
 		response.send('Deleted');
 	});

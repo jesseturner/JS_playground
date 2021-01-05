@@ -1,4 +1,4 @@
-window.addEventListener("load", async function getData()
+async function getData()
 	{
 		const get_response = await fetch('/api');
 		const data = await get_response.json();
@@ -14,7 +14,13 @@ window.addEventListener("load", async function getData()
 			const address = document.createElement('div');
 			address.textContent = 'address: ' + item.address;
 
-			root.append(name, address);
+			var del_button = document.createElement("input");
+			del_button.type = "reset";
+			del_button.value = "Delete";
+			del_button.id = "delete_spec";
+
+			root.append(name, address, del_button);
 			document.getElementById('data').append(root);
 		}
-	});
+	};
+window.addEventListener("load", getData());
