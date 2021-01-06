@@ -43,10 +43,11 @@ app.get('/delete', (request, response) => {
 	});
 
 //Delete specific entry
-app.get('/deletespec', (request, response) => {
-	const data = request.body;
-	users.remove({ name: { data } }, function(err, numDeleted) {
-     console.log('Deleted', data, 'entries');
+app.post('/deletespec', (request, response) => {
+	//const data = request.body;
+	//users.remove({ name: { data } }, function(err, numDeleted) {
+	database.remove({ _id: '62wGOKD2G3rq6DOG' }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'entries');
 	});
 		response.send('Deleted');
 	});
