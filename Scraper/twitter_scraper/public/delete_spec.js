@@ -1,11 +1,11 @@
 function enable_delete() { //Needed so get.js creates delete_spec buttons before this runs
 
-	var button = document.getElementById("delete_spec"); //Currently only the name of the first element
+	var button = document.getElementById("delete_spec"); //Need to pass the ID of the data entry
 
 	button.onclick = async function deleteSpecData()
 	{
-	var name = "Rex Ryan";
-	    const data = { name };
+	var id = "L7n1ajJDarjxWE0c";
+	    const data = { id };
 	    const options = {
 	    	method: 'POST',
 	    	headers: {'Content-Type': 'application/json'},

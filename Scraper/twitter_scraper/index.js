@@ -44,10 +44,9 @@ app.get('/delete', (request, response) => {
 
 //Delete specific entry
 app.post('/deletespec', (request, response) => {
-	//const data = request.body;
-	//users.remove({ name: { data } }, function(err, numDeleted) {
-	database.remove({ _id: '62wGOKD2G3rq6DOG' }, function(err, numDeleted) {
-     console.log('Deleted', numDeleted, 'entries');
+	const data = request.body.id; //needs to go to id level so it is just the text
+	database.remove({ _id: data }, function(err, numDeleted) {
+     console.log('Deleted', numDeleted, 'entries', data);
 	});
 		response.send('Deleted');
 	});
