@@ -4,7 +4,7 @@ function enable_delete() { //Needed so get.js creates delete_spec buttons before
 
 	button.onclick = async function deleteSpecData()
 	{
-	var id = "L7n1ajJDarjxWE0c";
+	var id = button.getAttribute("entry-id");
 	    const data = { id };
 	    const options = {
 	    	method: 'POST',
@@ -13,5 +13,7 @@ function enable_delete() { //Needed so get.js creates delete_spec buttons before
 	    };
 		const get_response = await fetch('/deletespec', options);
 		console.log(get_response);
+
+	getData();
 	}
 }

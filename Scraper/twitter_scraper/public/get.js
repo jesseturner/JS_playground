@@ -18,6 +18,7 @@ async function getData()
 			del_button.type = "reset";
 			del_button.value = "Delete";
 			del_button.id = "delete_spec";
+			del_button.setAttribute("entry-id", item._id);
 
 			root.append(name, address, del_button);
 			document.getElementById('data').append(root);

@@ -13,9 +13,8 @@ button.onclick = async function sendData() {
 	      body: JSON.stringify(data)
 	    };
 	    const response = await fetch('/api', options);
-	    const json = await response; //not actually the response I set in index.js
+	    const json = await response; 
 	    console.log(json);
-	    
-	    getData();
-	};
 
+	getData();
+	};
